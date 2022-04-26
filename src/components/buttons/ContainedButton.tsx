@@ -1,32 +1,30 @@
-import React from "react";
+import React from 'react'
 
 interface ButtonProps {
-  children: React.ReactNode;
-  background: "dark" | "light";
-  color: "dark" | "light";
-  space?: boolean | null;
+    children: React.ReactNode
+    background: 'dark' | 'light'
+    color: 'dark' | 'light'
+    space?: boolean | null
 }
 
 const ContainedButton: React.FC<ButtonProps> = ({
-  children,
-  background,
-  color,
-  space,
+    children,
+    background,
+    color,
+    space,
 }): JSX.Element => {
-  return (
-    <button
-      className={`${
-        background === "dark" ? "bg-dark" : "bg-white"
-      } px-8 md:px-6 sm:px-4  py-6 md:py-4  ${
-        color === "dark" ? "text-black" : "text-white"
-      }  
-        ${space ? "mt-12 md:mt-8 sm:mt-6" : "mt-0"}
-        font-regular text-2xl xs:text-sm rounded-20 xs:rounded-2xl w-max  hover:scale-105 transition-transform duration-300 drop-shadow-lg
+    return (
+        <button
+            className={`${background === 'dark' ? 'bg-dark' : 'bg-white'} 
+      px-4  py-4 md:py-3  
+      ${color === 'dark' ? 'text-black' : 'text-white'}  
+        ${space ? 'mt-8 md:mt-4 sm:mt-2' : 'mt-0'}
+        font-regular text-xl md:text-md sm:text-sm xs:text-xs rounded-20 sm:rounded-[12px] xs:rounded-xl w-max  hover:scale-105 transition-transform duration-300 drop-shadow-lg
         `}
-    >
-      {children}
-    </button>
-  );
-};
+        >
+            {children}
+        </button>
+    )
+}
 
-export default ContainedButton;
+export default ContainedButton
